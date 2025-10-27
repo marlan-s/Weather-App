@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Modern &amp; Minimal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+    <div class="app-container">
+        <!-- Desktop Sidebar Navigation -->
+        <nav class="sidebar-nav">
+            <div class="nav-brand">
+                <span class="brand-icon">☀️</span>
+                <span class="brand-text">Weather</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" data-page="home" class="nav-link active">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Home</span>
+                </a></li>
+                <li><a href="#" data-page="forecast" class="nav-link">
+                    <span class="nav-icon">📅</span>
+                    <span class="nav-text">Forecast</span>
+                </a></li>
+                <li><a href="#" data-page="details" class="nav-link">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Details</span>
+                </a></li>
+                <li><a href="#" data-page="settings" class="nav-link">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-text">Settings</span>
+                </a></li>
+                <li><a href="#" data-page="about" class="nav-link">
+                    <span class="nav-icon">ℹ️</span>
+                    <span class="nav-text">About</span>
+                </a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Home Page -->
+            <div id="home-page" class="page active">
+                <div class="search-container">
+                    <input type="text" id="city-search" class="search-input" placeholder="Search for a city...">
+                    <button class="search-btn" id="search-btn">🔍</button>
+                </div>
+
+                <div class="weather-hero" id="weather-hero">
+                    <div class="location-info">
+                        <h1 class="city-name" id="city-name">San Francisco, CA</h1>
+                        <p class="last-updated">Updated just now</p>
+                    </div>
+
+                    <div class="temp-display">
+                        <div class="main-temp" id="main-temp">72°</div>
+                        <button class="unit-toggle" id="unit-toggle">°F</button>
+                    </div>
+
+                    <div class="weather-icon-large" id="weather-icon-large">⛅</div>
+                    
+                    <div class="condition-text" id="condition-text">Partly Cloudy</div>
+
+                    <div class="weather-stats">
+                        <div class="stat-item">
+                            <span class="stat-icon">💧</span>
+                            <span class="stat-label">Humidity</span>
+                            <span class="stat-value" id="humidity">65%</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">💨</span>
+                            <span class="stat-label">Wind Speed</span>
+                            <span class="stat-value" id="wind-speed">12 mph</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forecast Page -->
+            <div id="forecast-page" class="page">
+                <h2 class="page-title">Weather Forecast</h2>
+                
+                <section class="forecast-section">
+                    <h3 class="section-title">5-Day Forecast</h3>
+                    <div class="forecast-grid" id="five-day-forecast">
+                        <!-- Forecast cards will be inserted here -->
+                    </div>
+                </section>
+
+                <section class="forecast-section">
+                    <h3 class="section-title">Hourly Forecast</h3>
+                    <div class="hourly-forecast" id="hourly-forecast">
+                        <!-- Hourly forecast will be inserted here -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- Details Page -->
+            <div id="details-page" class="page">
+                <h2 class="page-title">Weather Insights</h2>
+                
+                <div class="details-grid" id="details-grid">
+                    <div class="detail-card">
+                        <div class="detail-icon">🌡️</div>
+                        <div class="detail-label">Feels Like</div>
+                        <div class="detail-value" id="feels-like">70°F</div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">📊</div>
+                        <div class="detail-label">Air Pressure</div>
+                        <div class="detail-value" id="pressure">1013 hPa</div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">☀️</div>
+                        <div class="detail-label">UV Index</div>
+                        <div class="detail-value">
+                            <span id="uv-index">6</span>
+                            <span class="uv-badge" id="uv-badge">High</span>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">🌅</div>
+                        <div class="detail-label">Sunrise</div>
+                        <div class="detail-value" id="sunrise">6:42 AM</div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">🌇</div>
+                        <div class="detail-label">Sunset</div>
+                        <div class="detail-value" id="sunset">7:28 PM</div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">👁️</div>
+                        <div class="detail-label">Visibility</div>
+                        <div class="detail-value" id="visibility">10 mi</div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">☁️</div>
+                        <div class="detail-label">Cloud Cover</div>
+                        <div class="detail-value" id="cloud-cover">45%</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="cloud-progress" style="width: 45%"></div>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">💧</div>
+                        <div class="detail-label">Dew Point</div>
+                        <div class="detail-value" id="dew-point">58°F</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Page -->
+            <div id="settings-page" class="page">
+                <h2 class="page-title">Settings</h2>
+                
+                <div class="settings-container">
+                    <div class="setting-card">
+                        <div class="setting-header">
+                            <div class="setting-info">
+                                <div class="setting-title">Theme</div>
+                                <div class="setting-description">Choose your preferred theme</div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="theme-toggle">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="setting-card">
+                        <div class="setting-header">
+                            <div class="setting-info">
+                                <div class="setting-title">Temperature Unit</div>
+                                <div class="setting-description">Select Celsius or Fahrenheit</div>
+                            </div>
+                        </div>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="temp-unit" value="fahrenheit" checked>
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Fahrenheit (°F)</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="temp-unit" value="celsius">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Celsius (°C)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="setting-card">
+                        <div class="setting-header">
+                            <div class="setting-info">
+                                <div class="setting-title">Auto-Detect Location</div>
+                                <div class="setting-description">Automatically detect your location</div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="location-toggle" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="setting-card">
+                        <div class="setting-header">
+                            <div class="setting-info">
+                                <div class="setting-title">Saved Locations</div>
+                                <div class="setting-description">Quick access to your favorite cities</div>
+                            </div>
+                        </div>
+                        <div class="saved-locations" id="saved-locations">
+                            <!-- Saved location cards will be inserted here -->
+                        </div>
+                        <button class="btn-add-location" id="add-location-btn">+ Add New Location</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Page -->
+            <div id="about-page" class="page">
+                <h2 class="page-title">About Weather App</h2>
+                
+                <div class="about-container">
+                    <div class="about-card">
+                        <div class="about-icon">☀️</div>
+                        <h3 class="about-title">Our Mission</h3>
+                        <p class="about-text">
+                            A modern weather application providing accurate forecasts and detailed weather insights. 
+                            Built with a focus on clarity, speed, and intuitive user experience.
+                        </p>
+                    </div>
+
+                    <div class="about-card">
+                        <h3 class="about-title">Technologies Used</h3>
+                        <ul class="tech-list">
+                            <li class="tech-item">
+                                <span class="tech-icon">📄</span>
+                                <span class="tech-name">HTML5</span>
+                            </li>
+                            <li class="tech-item">
+                                <span class="tech-icon">🎨</span>
+                                <span class="tech-name">CSS3</span>
+                            </li>
+                            <li class="tech-item">
+                                <span class="tech-icon">⚡</span>
+                                <span class="tech-name">JavaScript (ES6+)</span>
+                            </li>
+                            <li class="tech-item">
+                                <span class="tech-icon">🌐</span>
+                                <span class="tech-name">OpenWeatherMap API</span>
+                            </li>
+                            <li class="tech-item">
+                                <span class="tech-icon">📍</span>
+                                <span class="tech-name">Geolocation API</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="about-card">
+                        <h3 class="about-title">Data Attribution</h3>
+                        <p class="about-text">
+                            Weather data provided by <strong>OpenWeatherMap</strong>. 
+                            All weather information is sourced from their comprehensive database of global weather conditions.
+                        </p>
+                    </div>
+
+                    <div class="about-footer">
+                        <p class="version-info">Version 1.0.0</p>
+                        <p class="copyright">© 2025 Weather App. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Mobile Bottom Navigation -->
+        <nav class="bottom-nav">
+            <a href="#" data-page="home" class="bottom-nav-link active">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+            </a>
+            <a href="#" data-page="forecast" class="bottom-nav-link">
+                <span class="nav-icon">📅</span>
+                <span class="nav-label">Forecast</span>
+            </a>
+            <a href="#" data-page="details" class="bottom-nav-link">
+                <span class="nav-icon">📊</span>
+                <span class="nav-label">Details</span>
+            </a>
+            <a href="#" data-page="settings" class="bottom-nav-link">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-label">Settings</span>
+            </a>
+            <a href="#" data-page="about" class="bottom-nav-link">
+                <span class="nav-icon">ℹ️</span>
+                <span class="nav-label">About</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

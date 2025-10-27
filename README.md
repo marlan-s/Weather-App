@@ -25,6 +25,9 @@ Built with a modern tech stack and powered by a reliable weather API.
 - ⚡ Fast, clean, and easy to use  
 
 ---
+<img width="1490" height="722" alt="Screenshot 2025-10-27 125957" src="https://github.com/user-attachments/assets/eabd33f2-eeb8-4f3d-98bd-3f30737aeb60" />
+<img width="1506" height="736" alt="Screenshot 2025-10-27 125858" src="https://github.com/user-attachments/assets/776ad634-514c-4f32-b16b-bf1a77a44c22" />
+
 
 ## 🛠️ Tech Stack
 
